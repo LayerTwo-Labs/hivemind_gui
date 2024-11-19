@@ -1,4 +1,4 @@
-# hivemind_gui
+# Hivemind GUI
 
 Requirements:
 Godot v4.3 :
