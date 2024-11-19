@@ -13,4 +13,6 @@ config_version=5
 config/name="hivemind_gui"
 run/main_scene="res://scene/main_window.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
-config/icon="res://icon.svg"
+boot_splash/bg_color=Color(1, 0.431373, 0, 1)
+boot_splash/image="res://image/hivemind.png"
+config/icon="res://image/hivemind.png"
