@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://b080c8mqekegp"]
+[gd_scene load_steps=5 format=3 uid="uid://b080c8mqekegp"]
 
 [ext_resource type="Script" path="res://script/main_window.gd" id="1_of6v6"]
+[ext_resource type="StyleBox" uid="uid://do3pgd68vga3c" path="res://theme/background_flat_style_box.tres" id="2_7dyej"]
+[ext_resource type="StyleBox" uid="uid://dn13nduuqssou" path="res://theme/overview_flat_style_box.tres" id="3_e6xpv"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_8ikp3"]
 
 [node name="MainWindow" type="Control"]
 layout_mode = 3
@@ -11,9 +15,178 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_of6v6")
 
-[node name="Label" type="Label" parent="."]
+[node name="Margin" type="MarginContainer" parent="."]
 layout_mode = 0
 offset_right = 40.0
-offset_bottom = 23.0
-text = "Bitcoin Hivemind
-"
+offset_bottom = 40.0
+
+[node name="VBoxMain" type="VBoxContainer" parent="Margin"]
+layout_mode = 2
+
+[node name="HBoxMain" type="HBoxContainer" parent="Margin/VBoxMain"]
+layout_mode = 2
+
+[node name="PanelPageButtons" type="PanelContainer" parent="Margin/VBoxMain/HBoxMain"]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("2_7dyej")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Margin/VBoxMain/HBoxMain/PanelPageButtons"]
+layout_mode = 2
+
+[node name="ButtonOverview" type="Button" parent="Margin/VBoxMain/HBoxMain/PanelPageButtons/VBoxContainer"]
+layout_mode = 2
+toggle_mode = true
+button_pressed = true
+button_group = SubResource("ButtonGroup_8ikp3")
+text = "Overview"
+
+[node name="ButtonWallet" type="Button" parent="Margin/VBoxMain/HBoxMain/PanelPageButtons/VBoxContainer"]
+layout_mode = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_8ikp3")
+text = "Wallet"
+
+[node name="ButtonDecisions" type="Button" parent="Margin/VBoxMain/HBoxMain/PanelPageButtons/VBoxContainer"]
+layout_mode = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_8ikp3")
+text = "Decisions"
+
+[node name="ButtonMarkets" type="Button" parent="Margin/VBoxMain/HBoxMain/PanelPageButtons/VBoxContainer"]
+layout_mode = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_8ikp3")
+text = "Markets"
+
+[node name="ButtonVote" type="Button" parent="Margin/VBoxMain/HBoxMain/PanelPageButtons/VBoxContainer"]
+layout_mode = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_8ikp3")
+text = "Votes"
+
+[node name="ButtonHelp" type="Button" parent="Margin/VBoxMain/HBoxMain/PanelPageButtons/VBoxContainer"]
+layout_mode = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_8ikp3")
+text = "Help"
+
+[node name="ButtonSettings" type="Button" parent="Margin/VBoxMain/HBoxMain/PanelPageButtons/VBoxContainer"]
+layout_mode = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_8ikp3")
+text = "Settings"
+
+[node name="PanelPages" type="PanelContainer" parent="Margin/VBoxMain/HBoxMain"]
+custom_minimum_size = Vector2(900, 600)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("2_7dyej")
+
+[node name="OverviewPage" type="Control" parent="Margin/VBoxMain/HBoxMain/PanelPages"]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="Margin/VBoxMain/HBoxMain/PanelPages/OverviewPage"]
+custom_minimum_size = Vector2(800, 400)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = ExtResource("3_e6xpv")
+
+[node name="Label" type="Label" parent="Margin/VBoxMain/HBoxMain/PanelPages/OverviewPage/PanelContainer"]
+layout_mode = 2
+text = "Overview Page"
+
+[node name="WalletPage" type="Control" parent="Margin/VBoxMain/HBoxMain/PanelPages"]
+visible = false
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="Margin/VBoxMain/HBoxMain/PanelPages/WalletPage"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = ExtResource("3_e6xpv")
+
+[node name="Label" type="Label" parent="Margin/VBoxMain/HBoxMain/PanelPages/WalletPage/PanelContainer"]
+layout_mode = 2
+text = "Wallet Page"
+
+[node name="DecisionPage" type="Control" parent="Margin/VBoxMain/HBoxMain/PanelPages"]
+visible = false
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="Margin/VBoxMain/HBoxMain/PanelPages/DecisionPage"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = ExtResource("3_e6xpv")
+
+[node name="Label" type="Label" parent="Margin/VBoxMain/HBoxMain/PanelPages/DecisionPage/PanelContainer"]
+layout_mode = 2
+text = "Decision Page"
+
+[node name="MarketPage" type="Control" parent="Margin/VBoxMain/HBoxMain/PanelPages"]
+visible = false
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="Margin/VBoxMain/HBoxMain/PanelPages/MarketPage"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = ExtResource("3_e6xpv")
+
+[node name="Label" type="Label" parent="Margin/VBoxMain/HBoxMain/PanelPages/MarketPage/PanelContainer"]
+layout_mode = 2
+text = "Market Page"
+
+[node name="VotePage" type="Control" parent="Margin/VBoxMain/HBoxMain/PanelPages"]
+visible = false
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="Margin/VBoxMain/HBoxMain/PanelPages/VotePage"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = ExtResource("3_e6xpv")
+
+[node name="Label" type="Label" parent="Margin/VBoxMain/HBoxMain/PanelPages/VotePage/PanelContainer"]
+layout_mode = 2
+text = "Vote Page"
+
+[node name="HelpPage" type="Control" parent="Margin/VBoxMain/HBoxMain/PanelPages"]
+visible = false
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="Margin/VBoxMain/HBoxMain/PanelPages/HelpPage"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = ExtResource("3_e6xpv")
+
+[node name="Label" type="Label" parent="Margin/VBoxMain/HBoxMain/PanelPages/HelpPage/PanelContainer"]
+layout_mode = 2
+text = "Help Page"
+
+[node name="SettingsPage" type="Control" parent="Margin/VBoxMain/HBoxMain/PanelPages"]
+visible = false
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="Margin/VBoxMain/HBoxMain/PanelPages/SettingsPage"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = ExtResource("3_e6xpv")
+
+[node name="Label" type="Label" parent="Margin/VBoxMain/HBoxMain/PanelPages/SettingsPage/PanelContainer"]
+layout_mode = 2
+text = "Settings Page"
+
+[node name="PanelBottom" type="PanelContainer" parent="Margin/VBoxMain"]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("2_7dyej")
+
+[connection signal="toggled" from="Margin/VBoxMain/HBoxMain/PanelPageButtons/VBoxContainer/ButtonOverview" to="." method="_on_button_overview_toggled"]
+[connection signal="toggled" from="Margin/VBoxMain/HBoxMain/PanelPageButtons/VBoxContainer/ButtonWallet" to="." method="_on_button_wallet_toggled"]
+[connection signal="toggled" from="Margin/VBoxMain/HBoxMain/PanelPageButtons/VBoxContainer/ButtonDecisions" to="." method="_on_button_decisions_toggled"]
+[connection signal="toggled" from="Margin/VBoxMain/HBoxMain/PanelPageButtons/VBoxContainer/ButtonMarkets" to="." method="_on_button_markets_toggled"]
+[connection signal="toggled" from="Margin/VBoxMain/HBoxMain/PanelPageButtons/VBoxContainer/ButtonVote" to="." method="_on_button_vote_toggled"]
+[connection signal="toggled" from="Margin/VBoxMain/HBoxMain/PanelPageButtons/VBoxContainer/ButtonHelp" to="." method="_on_button_help_toggled"]
+[connection signal="toggled" from="Margin/VBoxMain/HBoxMain/PanelPageButtons/VBoxContainer/ButtonSettings" to="." method="_on_button_settings_toggled"]
