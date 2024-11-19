@@ -16,3 +16,8 @@ config/features=PackedStringArray("4.3", "Forward Plus")
 boot_splash/bg_color=Color(1, 0.431373, 0, 1)
 boot_splash/image="res://image/hivemind.png"
 config/icon="res://image/hivemind.png"
+
+[display]
+
+window/stretch/mode="canvas_items"
+window/stretch/aspect="ignore"
