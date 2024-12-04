@@ -187,9 +187,58 @@ offset_right = 40.0
 offset_bottom = 40.0
 theme_override_styles/panel = ExtResource("3_e6xpv")
 
-[node name="Label" type="Label" parent="Margin/VBoxMain/HBoxMain/PanelPages/DecisionPage/PanelContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Margin/VBoxMain/HBoxMain/PanelPages/DecisionPage/PanelContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Margin/VBoxMain/HBoxMain/PanelPages/DecisionPage/PanelContainer/VBoxContainer"]
 layout_mode = 2
 text = "Decision Page"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Margin/VBoxMain/HBoxMain/PanelPages/DecisionPage/PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Margin/VBoxMain/HBoxMain/PanelPages/DecisionPage/PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Current Branch: Main "
+
+[node name="MenuButtonSelectBranch" type="MenuButton" parent="Margin/VBoxMain/HBoxMain/PanelPages/DecisionPage/PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Select Branch"
+flat = false
+switch_on_hover = true
+item_count = 2
+popup/item_0/text = "Main"
+popup/item_0/checked = true
+popup/item_1/text = "Other"
+popup/item_1/id = 1
+
+[node name="ButtonCreateDecision" type="Button" parent="Margin/VBoxMain/HBoxMain/PanelPages/DecisionPage/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Create Decison"
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="Margin/VBoxMain/HBoxMain/PanelPages/DecisionPage/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Margin/VBoxMain/HBoxMain/PanelPages/DecisionPage/PanelContainer/VBoxContainer/VBoxContainer3"]
+layout_mode = 2
+text = "Decisions for Main branch"
+
+[node name="LineEditSearch" type="LineEdit" parent="Margin/VBoxMain/HBoxMain/PanelPages/DecisionPage/PanelContainer/VBoxContainer/VBoxContainer3"]
+layout_mode = 2
+placeholder_text = "Type here to search for decision"
+
+[node name="ItemList" type="ItemList" parent="Margin/VBoxMain/HBoxMain/PanelPages/DecisionPage/PanelContainer/VBoxContainer/VBoxContainer3"]
+layout_mode = 2
+auto_height = true
+item_count = 7
+item_0/text = "Example Decision #1"
+item_1/text = "Example Decision #2"
+item_2/text = "Example Decision #3"
+item_3/text = "Example Decision #4"
+item_4/text = "Example Decision #5"
+item_5/text = "Example Decision #6"
+item_6/text = "Example Decision #7"
 
 [node name="MarketPage" type="Control" parent="Margin/VBoxMain/HBoxMain/PanelPages"]
 visible = false
@@ -201,9 +250,61 @@ offset_right = 40.0
 offset_bottom = 40.0
 theme_override_styles/panel = ExtResource("3_e6xpv")
 
-[node name="Label" type="Label" parent="Margin/VBoxMain/HBoxMain/PanelPages/MarketPage/PanelContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Margin/VBoxMain/HBoxMain/PanelPages/MarketPage/PanelContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Margin/VBoxMain/HBoxMain/PanelPages/MarketPage/PanelContainer/VBoxContainer"]
 layout_mode = 2
 text = "Market Page"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Margin/VBoxMain/HBoxMain/PanelPages/MarketPage/PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Margin/VBoxMain/HBoxMain/PanelPages/MarketPage/PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Current Branch: Main "
+
+[node name="MenuButtonSelectBranch" type="MenuButton" parent="Margin/VBoxMain/HBoxMain/PanelPages/MarketPage/PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Select Branch"
+flat = false
+switch_on_hover = true
+item_count = 2
+popup/item_0/text = "Main"
+popup/item_0/checked = true
+popup/item_1/text = "Other"
+popup/item_1/id = 1
+
+[node name="ButtonCreateDecision" type="Button" parent="Margin/VBoxMain/HBoxMain/PanelPages/MarketPage/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Create Market"
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="Margin/VBoxMain/HBoxMain/PanelPages/MarketPage/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Margin/VBoxMain/HBoxMain/PanelPages/MarketPage/PanelContainer/VBoxContainer/VBoxContainer3"]
+layout_mode = 2
+text = "Markets for Main branch"
+
+[node name="LineEditSearch" type="LineEdit" parent="Margin/VBoxMain/HBoxMain/PanelPages/MarketPage/PanelContainer/VBoxContainer/VBoxContainer3"]
+layout_mode = 2
+placeholder_text = "Type here to search for market"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Margin/VBoxMain/HBoxMain/PanelPages/MarketPage/PanelContainer/VBoxContainer/VBoxContainer3"]
+layout_mode = 2
+
+[node name="ItemList" type="ItemList" parent="Margin/VBoxMain/HBoxMain/PanelPages/MarketPage/PanelContainer/VBoxContainer/VBoxContainer3"]
+layout_mode = 2
+auto_height = true
+item_count = 7
+item_0/text = "Example Market #1"
+item_1/text = "Example Market #2"
+item_2/text = "Example Market #3"
+item_3/text = "Example Market #4"
+item_4/text = "Example Market #5"
+item_5/text = "Example Market #6"
+item_6/text = "Example Market #7"
 
 [node name="VotePage" type="Control" parent="Margin/VBoxMain/HBoxMain/PanelPages"]
 visible = false
